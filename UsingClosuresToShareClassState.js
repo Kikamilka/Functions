@@ -2,7 +2,7 @@ var Cat = (function() {
 	var cats = [];
 
 	function Cat(name, weight) {
-		if (arguments.length < 2) {
+		if (arguments.length < 2 || !name || !weight) { // FIXME new Cat(undefined, undefined) проходит проверку
 			throw new Error('Cat should have name and weight');
 		}
 
